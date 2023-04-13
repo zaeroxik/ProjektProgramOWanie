@@ -22,6 +22,21 @@ namespace ProjektProgramOWanie
         public AppWindow()
         {
             InitializeComponent();
+            list.ItemsSource = new OrderService(new appDbContext()).GetAll();
         }
+
+        void createOrder_Clicked(object sender, RoutedEventArgs e)
+        {
+            CreateOrderWindow window = new CreateOrderWindow();
+            window.Show();
+        }
+        void Logout_Clicked(object sender, RoutedEventArgs e)
+            {
+                MainWindow window = new MainWindow();
+                window.Show();
+                this.Close();
+            }
+
+        
     }
 }

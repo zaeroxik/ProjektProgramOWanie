@@ -29,7 +29,7 @@ namespace ProjektProgramOWanie
 
         void login_Clicked(object sender, RoutedEventArgs e)
         {
-            if (new LoginService(new appDbContext()).Authenticate(username.Text, password.Password))
+            if (new AccountService(new appDbContext()).Authenticate(username.Text, password.Password))
             {
                 AppWindow window = new AppWindow();
                 window.Show();

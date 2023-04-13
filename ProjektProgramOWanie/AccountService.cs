@@ -8,11 +8,11 @@ using System.Windows;
 
 namespace ProjektProgramOWanie
 {
-    public class LoginService
+    public class AccountService
     {
         private readonly appDbContext _dbContext;
 
-        public LoginService(appDbContext dbContext)
+        public AccountService(appDbContext dbContext)
         {
             _dbContext = dbContext;
         }

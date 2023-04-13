@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjektProgramOWanie"
         mc:Ignorable="d"
-        Title="AppWindow" Height="450" Width="800">
+        Title="Projekt"
+        WindowStyle="ToolWindow"
+        ResizeMode="NoResize"
+        WindowState="Maximized">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5" HorizontalAlignment="Left">
+            <Button Width="100" Margin="0,0,5,0" Click="createOrder_Clicked">Dodaj zlecenie</Button>
+            <Button Width="100">Pracownicy</Button>
+        </StackPanel>
+        <Button Grid.Row="0" HorizontalAlignment="Right" Width="100" Margin="5" Click="Logout_Clicked">Wyloguj</Button>
+
+        <ListView Grid.Row="1" x:Name="list">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Plate}" Width="100" Header="Nr Rej"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    
+    
     </Grid>
 </Window>
