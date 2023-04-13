@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,25 @@ namespace ProjektProgramOWanie
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow() //wstrzykiwanie zaleznosci
         {
             InitializeComponent();
+
+        }
+
+        void login_Clicked(object sender, RoutedEventArgs e)
+        {
+            if (new LoginService(new appDbContext()).Authenticate(username.Text, password.Password))
+            {
+                AppWindow window = new AppWindow();
+                window.Show();
+                this.Close();
+            }
+            else
+            {
+                warning.Visibility = Visibility.Visible;
+            }
+        }
         }
     }
-}
+

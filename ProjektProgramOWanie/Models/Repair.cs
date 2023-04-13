@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjektProgramOWanie.Models
 {
-    internal class Repair
+    public class Repair
     {
         public int Id { get; set; }
         public string Description { get; set; }

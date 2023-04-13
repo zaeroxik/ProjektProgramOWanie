@@ -11,7 +11,7 @@ namespace ProjektProgramOWanie
 
     
 
-    internal class appDbContext : DbContext
+    public class appDbContext : DbContext
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Employee> Employees { get; set; }
@@ -40,6 +40,16 @@ namespace ProjektProgramOWanie
                 .HasMany(x => x.Repairs)
                 .WithOne(x => x.Vehicle)
                 .OnDelete(DeleteBehavior.NoAction);
+
+
+            modelBuilder.Entity<User>()
+                .HasData(new User()
+                {
+                    Id = 1,
+                    Username = "admin",
+                    Password = BCrypt.Net.BCrypt.HashPassword("admin"),
+                    isAdmin = true
+            });
         }
     }
 }
