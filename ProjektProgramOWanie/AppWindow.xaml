@@ -20,14 +20,42 @@
         </StackPanel>
         <Button Grid.Row="0" HorizontalAlignment="Right" Width="100" Margin="5" Click="Logout_Clicked">Wyloguj</Button>
 
-        <ListView Grid.Row="1" x:Name="list">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Plate}" Width="100" Header="Nr Rej"/>
-                </GridView>
-            </ListView.View>
+        <ListView Grid.Row="1" x:Name="list" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding Plate}" MinWidth="100"/>
+                        <TextBlock Grid.Column="1" Text="{Binding Brand}" MinWidth="100"/>
+                        <TextBlock Grid.Column="2" Text="{Binding Model}" MinWidth="100"/>
+                        <TextBlock Grid.Column="3" Text="{Binding Mileage}" MinWidth="100"/>
+                        <TextBlock Grid.Column="4" Text="{Binding OwnerFirstName}" MinWidth="100"/>
+                        <TextBlock Grid.Column="5" Text="{Binding OwnerLastName}" MinWidth="100"/>
+                        <TextBlock Grid.Column="6" Text="{Binding OwnerTelephone}" MinWidth="100"/>
+                        <Button Grid.Column="7" Background="LightGreen" Margin="0,0,5,0">Zlecenia</Button>
+                        <Button Grid.Column="8" Background="LightBlue" Margin="0,0,5,0">Zlecenia</Button>
+                        <Button Grid.Column="9" Background="Red" Margin="0,0,5,0">Usuń</Button>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListView.ItemContainerStyle>
         </ListView>
-    
-    
+
+
     </Grid>
 </Window>
