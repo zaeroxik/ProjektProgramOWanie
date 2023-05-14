@@ -50,11 +50,12 @@ namespace ProjektProgramOWanie
         }
         void CreateConfirm_Clicked(object sender, RoutedEventArgs e)
         {
+            var priceParsed = Int32.TryParse(price.Text, out int result);
             var model = new CreateRepair()
             {
                 Plate = _plate,
                 Description = desc.Text,
-                Price = Int32.Parse(price.Text),
+                Price = result,
                 EmployeeName = EmployeeList.Text
             };
             new OrderService(new appDbContext()).CreateRepair(model);

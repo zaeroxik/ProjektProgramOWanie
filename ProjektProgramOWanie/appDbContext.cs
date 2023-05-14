@@ -39,7 +39,7 @@ namespace ProjektProgramOWanie
             modelBuilder.Entity<Vehicle>()
                 .HasMany(x => x.Repairs)
                 .WithOne(x => x.Vehicle)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
 
 
             modelBuilder.Entity<User>()

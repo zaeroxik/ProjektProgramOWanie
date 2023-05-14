@@ -90,7 +90,7 @@ namespace ProjektProgramOWanie
 
         public void DeleteRepair(string id)
         {
-            var rep = _dbContext.Repairs.FirstOrDefault(x => x.Id.Equals(Int32.Parse(id)));
+            var rep = _dbContext.Repairs.FirstOrDefault(x => x.Id.Equals(Int32.Parse(id)  ));
             if (rep != null)
             {
                 _dbContext.Repairs.Remove(rep);
