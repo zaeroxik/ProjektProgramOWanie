@@ -36,7 +36,30 @@ namespace ProjektProgramOWanie
                 window.Show();
                 this.Close();
             }
-
+        void Repairs_Clicked(object sender, RoutedEventArgs e)
+        {
+            var plate = ((Button)sender).Tag;
+            RepairsWindow window = new RepairsWindow(plate.ToString());
+            window.Show();
+        }
+        void DoneRepairs_Clicked(object sender, RoutedEventArgs e)
+        {
+            var plate = ((Button)sender).Tag;
+            DoneRepairsWindow window = new DoneRepairsWindow(plate.ToString());
+            window.Show();
+        }
+        void employees_Clicked(object sender, RoutedEventArgs e)
+        {
+            EmployeesWindow window = new EmployeesWindow();
+            window.Show();
+        }
+        void Delete_Clicked(object sender, RoutedEventArgs e)
+        {
+            new OrderService(new appDbContext()).DeleteOrder((((Button)sender).Tag.ToString()));
+                AppWindow window = new AppWindow();
+                window.Show();
+                this.Close();
+        }
         
     }
 }

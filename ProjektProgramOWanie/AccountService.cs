@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ProjektProgramOWanie.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,25 @@ namespace ProjektProgramOWanie
             }
             else { return false; }
 
+        }
+        public List<Employee> GetEmployees()
+        {
+            return _dbContext.Employees.ToList();
+        }
+        public bool CreateEmployee(Employee employee)
+        {
+            _dbContext.Employees.Add(employee);
+            _dbContext.SaveChanges();
+            return true;
+        }
+        public void DeleteEmployee(string id)
+        {
+            var rep = _dbContext.Employees.FirstOrDefault(x => x.Id.Equals(Int32.Parse(id)));
+            if (rep != null)
+            {
+                _dbContext.Employees.Remove(rep);
+                _dbContext.SaveChanges();
+            }
         }
     }
 }

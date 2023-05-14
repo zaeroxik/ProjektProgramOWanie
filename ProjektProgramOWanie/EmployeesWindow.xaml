@@ -1,0 +1,60 @@
+﻿<Window x:Class="ProjektProgramOWanie.EmployeesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjektProgramOWanie"
+        mc:Ignorable="d"
+        Title="Nowy Zleceniodawca" 
+        Height="400" 
+        Width="800"
+        WindowStyle="ToolWindow"
+        ResizeMode="NoResize" >
+    <StackPanel>
+        <Grid Margin="0,0,0,0">
+            <Grid VerticalAlignment="Top" HorizontalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/> 
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock>Imię</TextBlock>
+                    <TextBox x:Name="firstname" Grid.Column="1"/>
+                    <TextBlock  Grid.Row="1">Nazwisko</TextBlock>
+                    <TextBox x:Name="surname" Grid.Row="1" Grid.Column="1"/>
+                    <TextBlock Grid.Row="2">Nr Tel</TextBlock>
+                    <TextBox x:Name="phone" Grid.Row="2" Grid.Column="1"/>
+                </Grid>
+                <Button Grid.Row="1" Background="LightGreen" Margin="5" Click="Create_Clicked">Dodaj</Button>
+
+                <ListView Grid.Row="2" x:Name="list" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Top" >
+                    <ListView.View>
+                        <GridView AllowsColumnReorder="False">
+                            <GridViewColumn DisplayMemberBinding="{Binding FullName}" Header="Opis" Width="220"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Telephone}" Header="Cena" Width="Auto"/>
+                            <GridViewColumn Width="Auto">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button  Background="Red" Click="Delete_Clicked" Tag="{Binding Id}" Content="Usuń"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+        </Grid>
+    </StackPanel>
+</Window>
