@@ -1,13 +1,13 @@
 ﻿
 # ProgramOWanie
-Application made for work optimalization in Transport industry and  for class project. :)
+Application created for a school project.
 
 ## Table of Contents
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
 * [Features](#features)
 * [Screenshots](#screenshots)
-* [Prerequisites](#Prerequisites)
+* [Prerequisites](#prerequisites)
 * [Setup](#setup)
 * [Usage](#usage)
 * [Contact](#contact)
@@ -21,7 +21,7 @@ Application made for work optimalization in Transport industry and  for class pr
 <!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 
 
-## Technologies and packages in Visual studio 2022 Used:
+## Technologies Used:
 - Application is writted in C# in WPF XAML
 - Microsoft.EntityFrameworkCore 6.0.10
 - Microsoft.EntityFrameworkCore.SqlServer 6.0.104
@@ -36,12 +36,15 @@ Most of the important features:
 - Add and manage your workers
 - You can manage database with ProgramOWanie application
 - Add and manage any work done with client car
+- Once Job is finished you can move it to finished jobs section, where all finished jobs are stored
 
 
-## Sample Screenshots TO DO
-<a href="https://postimages.org/" target="_blank"><img src="https://i.postimg.cc/Kj3QkMqC/1.png" alt="1"/></a><br/><br/>
-<a href="https://postimages.org/" target="_blank"><img src="https://i.postimg.cc/3WM1gxzN/2.png" alt="2"/></a><br/><br/>
-<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/Z5NR7K2Z/3.png' border='0' alt='3'/></a>
+## Screenshots
+<a href="https://postimages.org/" target="_blank"><img src="https://i.postimg.cc/qMz653yJ/1.png" alt="1"/></a><br/><br/>
+<a href="https://postimg.cc/tsCpP6WS" target="_blank"><img src="https://i.postimg.cc/2Sn6sF6D/2.png" alt="2"/></a><br/><br/>
+<a href="https://postimg.cc/4YLZ131J" target="_blank"><img src="https://i.postimg.cc/8CD5NJJr/3.png" alt="3"/></a><br/><br/>
+
+
 <!-- If you have screenshots you'd like to share, include them here. -->
 
 
@@ -67,10 +70,13 @@ Connection string to database looks like this:
         private string _connectionString =
             "Server=(localdb)\\local;Database=wpfDb;Trusted_Connection=True;";
             
+            
+            
+So first you will have to create Server like this: (localdb)\Local or edit a code and insert your server.
 
--  Please run script called "[script.sql](https://github.com/zaeroxik/ProjektProgramOWanie/blob/master/script.sql "script.sql")", this will create database required for this application.
+-  Please run script called "[script.sql](https://github.com/zaeroxik/ProjektProgramOWanie/blob/master/script.sql "script.sql")", this will create database required for this application (Add-migration abc and update-database will also work in Package managment console). 
 
-After that please run project/application via Visual studio or simply with .exe file located in [ProjektProgramOWanie.zi](https://github.com/zaeroxik/ProjektProgramOWanie/blob/master/ProjektProgramOWanie.zip "ProjektProgramOWanie.zip") folder (please copy whole folder).
+After that please run project/application via Visual studio or simply with .exe file located in [ProjektProgramOWanie.zip](https://github.com/zaeroxik/ProjektProgramOWanie/blob/master/ProjektProgramOWanie.zip "ProjektProgramOWanie.zip") folder (please copy whole folder).
 
     
 
@@ -79,8 +85,8 @@ For tests we have created an admin account, please use it for further tests.
 login: admin
 password: admin
 
-After login at top you can see 4 options (Odswiez, Dodaj pojazd, Dodaj kierowce, Zamknij).
-In table rows you can see all cars you have added, and after right click on that you can view more details of this car ("Informacje") and manage a list of repairs of this car etc.
+After login at top you can see 2 options (Dodaj zleceniodawce, Pracownicy).
+In table rows you can see all customers you have added, and on the same row you can see current jobs or jobs which has been archived also you can delete a customer.
 
 
 ## Contact
