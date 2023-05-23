@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjektProgramOWanie"
         mc:Ignorable="d"
-        Title="" 
+        Title="Zlecenia w trakcie" 
         Height="400" 
         Width="800"
         WindowStyle="ToolWindow"
