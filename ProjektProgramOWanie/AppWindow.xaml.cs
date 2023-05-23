@@ -17,7 +17,7 @@ namespace ProjektProgramOWanie
     /// <summary>
     /// Logika interakcji dla klasy AppWindow.xaml
     /// </summary>
-    public partial class AppWindow : Window
+    public partial class AppWindow : Window 
     {
         public AppWindow()
         {
