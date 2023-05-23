@@ -30,7 +30,7 @@ namespace ProjektProgramOWanie
             _plate = Plate;
         }
         /// <summary>
-        /// Moving to CreateView.Visibility window where you can add a repair
+        /// Moving to CreateView.Visibility window where you can add a repair and loading a list with employees
         /// </summary>
         void Create_Clicked(object sender, RoutedEventArgs e)
         {
@@ -85,7 +85,7 @@ namespace ProjektProgramOWanie
         }
 
         /// <summary>
-        /// Deleting current repair from table
+        /// Deleting current repair from table and refreshing window
         /// </summary>
         void Delete_Clicked(object sender, RoutedEventArgs e)
         {

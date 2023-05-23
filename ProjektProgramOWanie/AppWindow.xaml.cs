@@ -19,6 +19,7 @@ namespace ProjektProgramOWanie
     /// </summary>
     public partial class AppWindow : Window 
     {
+
         public AppWindow()
         {
             InitializeComponent();

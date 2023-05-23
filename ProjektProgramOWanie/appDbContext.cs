@@ -22,7 +22,7 @@ namespace ProjektProgramOWanie
 
 
         private string _connectionString =
-            "Server=DESKTOP-319FLMO\\SQLEXPRESS;Database=wpfDb;Trusted_Connection=True;";
+            "Server=(localdb)\\Local;Database=wpfDb;Trusted_Connection=True;";
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
