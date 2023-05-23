@@ -27,7 +27,7 @@ namespace ProjektProgramOWanie
 
         }
         /// <summary>
-        /// Checking the existence of the user and the correctness of the password. If it is correct, the MainWindow window opens, if not messagebox shows error
+        /// Checking the existence of the user and the correctness of the password. If it is correct, the MainWindow window opens, if not warning appears
         /// </summary>
         /// 
         void login_Clicked(object sender, RoutedEventArgs e)
