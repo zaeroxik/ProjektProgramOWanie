@@ -1,5 +1,5 @@
 ﻿
-# MyTrucks
+# ProgramOWanie
 Application made for work optimalization in Transport industry and  for class project. :)
 
 ## Table of Contents
