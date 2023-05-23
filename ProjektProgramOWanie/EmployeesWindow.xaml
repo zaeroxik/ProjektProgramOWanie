@@ -41,8 +41,8 @@
                 <ListView Grid.Row="2" x:Name="list" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Top" >
                     <ListView.View>
                         <GridView AllowsColumnReorder="False">
-                            <GridViewColumn DisplayMemberBinding="{Binding FullName}" Header="Opis" Width="220"/>
-                            <GridViewColumn DisplayMemberBinding="{Binding Telephone}" Header="Cena" Width="Auto"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding FullName}" Header="Imie i nazwisko" Width="220"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Telephone}" Header="Telefon kontaktowy" Width="140"/>
                             <GridViewColumn Width="Auto">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>

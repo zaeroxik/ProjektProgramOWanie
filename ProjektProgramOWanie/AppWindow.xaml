@@ -27,7 +27,7 @@
                     <GridViewColumn DisplayMemberBinding="{Binding Plate}" Header="Nr Rej" Width="220"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Brand}" Header="Marka" Width="Auto"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Model}" Header="Model" Width="Auto"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Mileage}" Header="Przebieg" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Milage}" Header="Przebieg" Width="Auto"/>
                     <GridViewColumn DisplayMemberBinding="{Binding OwnerFirstName}" Header="Imię" Width="Auto"/>
                     <GridViewColumn DisplayMemberBinding="{Binding OwnerLastName}" Header="Nazwisko" Width="Auto"/>
                     <GridViewColumn DisplayMemberBinding="{Binding OwnerTelephone}" Header="Nr Tel" Width="Auto"/>
