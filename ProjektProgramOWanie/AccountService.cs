@@ -17,6 +17,10 @@ namespace ProjektProgramOWanie
         {
             _dbContext = dbContext;
         }
+
+        /// <summary>
+        /// Checking the existence of the user and the correctness of the password using BCrypt - string to hash converter.
+        /// </summary>
         public bool Authenticate(string username, string password)
         {
             var user = _dbContext.Users.FirstOrDefault(x => x.Username.Equals(username));
@@ -30,16 +34,26 @@ namespace ProjektProgramOWanie
             else { return false; }
 
         }
+        /// <summary>
+        /// Creating new employee and saving to database
+        /// </summary>
         public List<Employee> GetEmployees()
         {
             return _dbContext.Employees.ToList();
         }
+        /// <summary>
+        /// Creating new employee and saving to database
+        /// </summary>
         public bool CreateEmployee(Employee employee)
         {
             _dbContext.Employees.Add(employee);
             _dbContext.SaveChanges();
             return true;
         }
+
+        /// <summary>
+        /// Deleting current object from database and saving
+        /// </summary>
         public void DeleteEmployee(string id)
         {
             var rep = _dbContext.Employees.FirstOrDefault(x => x.Id.Equals(Int32.Parse(id)));

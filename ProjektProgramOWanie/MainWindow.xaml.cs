@@ -26,7 +26,10 @@ namespace ProjektProgramOWanie
             InitializeComponent();
 
         }
-
+        /// <summary>
+        /// Checking the existence of the user and the correctness of the password. If it is correct, the MainWindow window opens, if not messagebox shows
+        /// </summary>
+        /// 
         void login_Clicked(object sender, RoutedEventArgs e)
         {
             if (new AccountService(new appDbContext()).Authenticate(username.Text, password.Password))

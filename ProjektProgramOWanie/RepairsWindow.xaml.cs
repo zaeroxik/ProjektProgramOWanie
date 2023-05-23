@@ -29,7 +29,9 @@ namespace ProjektProgramOWanie
             list.ItemsSource = new OrderService(new appDbContext()).GetCurrentRepairs(Plate);
             _plate = Plate;
         }
-
+        /// <summary>
+        /// Moving to CreateView.Visibility window where you can add a repair
+        /// </summary>
         void Create_Clicked(object sender, RoutedEventArgs e)
         {
             ListView.Visibility = Visibility.Hidden;
@@ -42,12 +44,18 @@ namespace ProjektProgramOWanie
             EmployeeList.ItemsSource = elist;
            
         }
+        /// <summary>
+        /// Moving back to main windows - RepairsWindow
+        /// </summary>
         void Back_Clicked(object sender, RoutedEventArgs e)
         {
             ListView.Visibility = Visibility.Visible;
             CreateView.Visibility = Visibility.Hidden;
 
         }
+        /// <summary>
+        /// Creating new object under Repairs and refresing window
+        /// </summary>
         void CreateConfirm_Clicked(object sender, RoutedEventArgs e)
         {
             var priceParsed = Int32.TryParse(price.Text, out int result);
@@ -65,7 +73,9 @@ namespace ProjektProgramOWanie
             this.Close();
 
         }
-
+        /// <summary>
+        /// Adding "1" attribute to current repair and moving to finished repair section (as this window shows only "not finished"
+        /// </summary>
         void Done_Clicked(object sender, RoutedEventArgs e)
         {
             new OrderService(new appDbContext()).FinishRepair(((Button)sender).Tag.ToString());
@@ -73,6 +83,10 @@ namespace ProjektProgramOWanie
             repairsWindow.Show();
             this.Close();
         }
+
+        /// <summary>
+        /// Deleting current repair from table
+        /// </summary>
         void Delete_Clicked(object sender, RoutedEventArgs e)
         {
             new OrderService(new appDbContext()).DeleteRepair((((Button)sender).Tag.ToString()));

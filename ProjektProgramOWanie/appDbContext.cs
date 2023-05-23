@@ -9,7 +9,9 @@ using System.Threading.Tasks;
 namespace ProjektProgramOWanie
 {
 
-    
+    /// <summary>
+    /// Configuring connection to database and set specific models 
+    /// </summary>
 
     public class appDbContext : DbContext
     {
@@ -20,7 +22,7 @@ namespace ProjektProgramOWanie
 
 
         private string _connectionString =
-            "Server=(localdb)\\local;Database=wpfDb;Trusted_Connection=True;";
+            "Server=DESKTOP-319FLMO\\SQLEXPRESS;Database=wpfDb;Trusted_Connection=True;";
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -21,12 +21,19 @@ namespace ProjektProgramOWanie
     /// </summary>
     public partial class EmployeesWindow : Window
     {
+
+        /// <summary>
+        /// Loading employee table
+        /// </summary>
         public EmployeesWindow()
         {
             InitializeComponent();
             list.ItemsSource = new AccountService(new appDbContext()).GetEmployees();
         }
 
+        /// <summary>
+        /// Creating object from database and refreshing current window
+        /// </summary>
         void Create_Clicked(object sender, RoutedEventArgs e)
         {
             var emp = new Employee()
@@ -45,6 +52,10 @@ namespace ProjektProgramOWanie
 
 
         }
+
+        /// <summary>
+        /// Deleting object from database 
+        /// </summary>
         void Delete_Clicked(object sender, RoutedEventArgs e)
         {
             new AccountService(new appDbContext()).DeleteEmployee((((Button)sender).Tag.ToString()));

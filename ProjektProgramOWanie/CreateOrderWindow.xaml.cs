@@ -25,7 +25,9 @@ namespace ProjektProgramOWanie
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Creating new customer and closing current window CreateOrderWindow
+        /// </summary>
         void Create_Clicked(object sender, RoutedEventArgs e)
         {
             if(Int64.TryParse(milage.Text, out long mileageParsed))

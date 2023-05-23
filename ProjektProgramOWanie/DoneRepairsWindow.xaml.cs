@@ -22,7 +22,9 @@ namespace ProjektProgramOWanie
     /// </summary>
     public partial class DoneRepairsWindow : Window
     {
-
+        /// <summary>
+        /// Downloading data from the database about finished repairs
+        /// </summary>
         public DoneRepairsWindow(string Plate)
         {
             InitializeComponent();
